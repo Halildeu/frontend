@@ -1,0 +1,24 @@
+[[redirects]]
+  from = "/ethic/*"
+  to = "/ethic/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shell/*"
+  to = "/shell/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/suggestions/*"
+  to = "/suggestions/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ui-kit/*"
+  to = "/ui-kit/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/shell/index.html"
+  status = 200
