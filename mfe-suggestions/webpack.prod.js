@@ -7,6 +7,7 @@ const path = require('path');
 const prodConfig = {
   mode: 'production',
   output: {
+    filename: '[name].[contenthash].js', // Benzersiz dosya adı oluşturur
     // ÇIKTI ANA DİZİNDE dist/suggestions OLMALI!
     path: path.resolve(__dirname, '../dist/suggestions'),
     publicPath: '/suggestions/',
