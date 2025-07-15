@@ -8,7 +8,7 @@ const prodConfig = {
   mode: 'production',
     output: {
       path: path.resolve(__dirname, '../dist/shell'),
-      publicPath: '/shell/',
+      publicPath: '/',
       clean: true,
     },
   plugins: [
