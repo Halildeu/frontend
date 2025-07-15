@@ -7,9 +7,9 @@ const path = require('path');
 const prodConfig = {
   mode: 'production',
     output: {
-      path: path.resolve(__dirname, '../dist/shell'),
-      publicPath: '/shell/',
-      clean: true,
+      path: path.resolve(__dirname, '../dist'),
+      publicPath: '/',
+      clean: false,
     },
   plugins: [
     new ModuleFederationPlugin({
