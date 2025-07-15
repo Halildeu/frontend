@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "MFE Kök Dizini",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix mfe-suggestions\" \"npm start --prefix mfe-ethic\" \"npm start --prefix mfe-ui-kit\" \"npm start --prefix mfe-shell\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halildeu/frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Halildeu/frontend/issues"
+  },
+  "homepage": "https://github.com/Halildeu/frontend#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
