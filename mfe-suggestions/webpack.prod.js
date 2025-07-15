@@ -7,16 +7,17 @@ const path = require('path');
 const prodConfig = {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'), // build çıktısı buraya gelir
-    publicPath: '/suggestions/',           // sunucuda yayınlanacak kök dizin
-    clean: true,                           // eski build’i siler
+    // ÇIKTI ANA DİZİNDE dist/suggestions OLMALI!
+    path: path.resolve(__dirname, '../dist/suggestions'),
+    publicPath: '/suggestions/',
+    clean: true,
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfe_suggestions',
       filename: 'remoteEntry.js',
       remotes: {
-        'mfe_shell': 'mfe_shell@/shell/remoteEntry.js',
+        'mfe_shell': 'mfe_shell@/remoteEntry.js', // shell ana dizinde
         'mfe_ui_kit': 'mfe_ui_kit@/ui-kit/remoteEntry.js',
       },
       exposes: {

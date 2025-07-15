@@ -6,11 +6,11 @@ const path = require('path');
 
 const prodConfig = {
   mode: 'production',
-  output: {
-    path: path.resolve(__dirname, '../../dist'),
-    publicPath: '/',
-    clean: true, // Her build öncesi dist klasörünü temizler
-  },
+    output: {
+      path: path.resolve(__dirname, '../dist/shell'),
+      publicPath: '/shell/',
+      clean: true,
+    },
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfe_shell',
@@ -19,10 +19,9 @@ const prodConfig = {
         mfe_ethic: 'mfe_ethic@/ethic/remoteEntry.js',
         mfe_ui_kit: 'mfe_ui_kit@/ui-kit/remoteEntry.js',
       },
-            exposes: {
+      exposes: {
         './logic': './src/exposed-logic.ts',
       },
-      // GÜNCELLENDİ: shared bölümü tam haliyle eklendi
       shared: {
         ...deps,
         react: { singleton: true, requiredVersion: deps.react },

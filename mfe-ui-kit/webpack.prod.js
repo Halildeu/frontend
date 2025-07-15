@@ -7,8 +7,8 @@ const path = require('path');
 const prodConfig = {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/ui-kit/', // Sunucu dizini, prod'da yayınlayacağın path
+    path: path.resolve(__dirname, '../dist/ui-kit'), // DÜZELTİLDİ
+    publicPath: '/ui-kit/',                             // Doğru, her zaman /ui-kit/ altına yayınlanacak
     clean: true,
   },
   plugins: [

@@ -7,17 +7,17 @@ const path = require('path');
 const prodConfig = {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),        // Build çıktısı buraya gelir
-    publicPath: '/ethic/',                        // Sunucudaki kök dizin (gerekirse değiştir)
-    clean: true,                                  // Build öncesi dist temizlenir
+    path: path.resolve(__dirname, '../dist/ethic'), // DOĞRU: Ana dist altına
+    publicPath: '/ethic/',                             // Sunucuda /ethic/ dizininden yayınlanacak
+    clean: true,
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfe_ethic',
       filename: 'remoteEntry.js',
       remotes: {
-        'mfe_shell': 'mfe_shell@/shell/remoteEntry.js',           // Prod sunucuya göre yolunu ayarla!
-        'mfe_ui_kit': 'mfe_ui_kit@/ui-kit/remoteEntry.js',
+        mfe_shell: 'mfe_shell@/remoteEntry.js',                // Shell ana dizinde!
+        mfe_ui_kit: 'mfe_ui_kit@/ui-kit/remoteEntry.js',
       },
       exposes: {
         './EthicApp': './src/App.tsx',
